@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="12C3006" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="7zm-O2-8kM">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1930"/>
+    </dependencies>
+    <scenes>
+        <!--Camera View Controller - Color Harmonizor-->
+        <scene sceneID="5">
+            <objects>
+                <viewController id="2" customClass="CHCameraViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3" customClass="GLKView">
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="center" image="logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="rd1-su-u4A"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="GNQ-cZ-7RJ"/>
+                            <button hidden="YES" opaque="NO" alpha="0.80000000000000004" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fUL-yn-9ot">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="193" id="40j-p6-KXe"/>
+                                    <constraint firstAttribute="height" constant="55" id="zeI-ap-RyD"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" backgroundImage="harmonize.png">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="harmonize:" destination="2" eventType="touchUpInside" id="lwN-ET-1iZ"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" image="white-arrow.png" translatesAutoresizingMaskIntoConstraints="NO" id="AJw-Jf-zOE">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="195" id="24a-1U-RDp"/>
+                                    <constraint firstAttribute="height" constant="99" id="ajC-2O-kXZ"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="GNQ-cZ-7RJ" firstAttribute="leading" secondItem="3" secondAttribute="leading" type="default" id="2wG-6P-aAn"/>
+                            <constraint firstItem="GNQ-cZ-7RJ" firstAttribute="bottom" secondItem="3" secondAttribute="bottom" type="default" id="HD0-Uv-A4C"/>
+                            <constraint firstItem="fUL-yn-9ot" firstAttribute="centerX" secondItem="GNQ-cZ-7RJ" secondAttribute="centerX" type="default" id="ImY-uA-bCy"/>
+                            <constraint firstItem="GNQ-cZ-7RJ" firstAttribute="top" secondItem="3" secondAttribute="top" type="default" id="N8B-fK-3gY"/>
+                            <constraint firstItem="rd1-su-u4A" firstAttribute="leading" secondItem="3" secondAttribute="leading" type="default" id="Poc-qP-Jsk"/>
+                            <constraint firstItem="AJw-Jf-zOE" firstAttribute="top" secondItem="3" secondAttribute="top" type="default" id="ZhZ-DB-Zej"/>
+                            <constraint firstItem="rd1-su-u4A" firstAttribute="top" secondItem="3" secondAttribute="top" type="default" id="aKU-lt-QkN"/>
+                            <constraint firstItem="AJw-Jf-zOE" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" type="default" id="cup-CA-tWx"/>
+                            <constraint firstAttribute="bottom" secondItem="fUL-yn-9ot" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="hY4-W6-x14"/>
+                            <constraint firstItem="rd1-su-u4A" firstAttribute="bottom" secondItem="3" secondAttribute="bottom" type="default" id="w5N-ca-5sU"/>
+                            <constraint firstItem="rd1-su-u4A" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" type="default" id="xQA-Tk-y6b"/>
+                            <constraint firstItem="GNQ-cZ-7RJ" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" type="default" id="xTy-IC-Rdw"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Color Harmonizor" id="ISn-cw-1wU">
+                        <barButtonItem key="rightBarButtonItem" systemItem="camera" id="55r-hR-prN">
+                            <color key="tintColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="loadActionSheet:" destination="2" id="vqm-yf-3Hb"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="btnHarmonize" destination="fUL-yn-9ot" id="GRI-LP-kkH"/>
+                        <outlet property="myImage" destination="GNQ-cZ-7RJ" id="VTo-9f-jLB"/>
+                        <outlet property="pickAPhoto" destination="AJw-Jf-zOE" id="NfP-kf-YcU"/>
+                        <segue destination="UR5-Hl-POs" kind="push" identifier="harmonize" id="dV7-sz-nVD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-214" y="-13"/>
+        </scene>
+        <!--Harmonize View Controller - Color Harmonizor-->
+        <scene sceneID="Ms1-TC-J9Q">
+            <objects>
+                <viewController id="UR5-Hl-POs" customClass="CHHarmonizeViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="LMY-2N-mKN">
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="p4n-Nw-ut7"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" indicatorStyle="white" translatesAutoresizingMaskIntoConstraints="NO" id="Vyk-tX-KNv"/>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Vyk-tX-KNv" firstAttribute="top" secondItem="LMY-2N-mKN" secondAttribute="top" constant="331" id="0G7-jI-zxJ"/>
+                            <constraint firstItem="p4n-Nw-ut7" firstAttribute="leading" secondItem="LMY-2N-mKN" secondAttribute="leading" type="default" id="4ky-Kb-vsc"/>
+                            <constraint firstItem="Vyk-tX-KNv" firstAttribute="trailing" secondItem="LMY-2N-mKN" secondAttribute="trailing" type="default" id="9R3-lE-zLG"/>
+                            <constraint firstItem="p4n-Nw-ut7" firstAttribute="trailing" secondItem="LMY-2N-mKN" secondAttribute="trailing" type="default" id="ZjB-8S-4qQ"/>
+                            <constraint firstItem="p4n-Nw-ut7" firstAttribute="top" secondItem="LMY-2N-mKN" secondAttribute="top" type="default" id="g6S-gG-VH5"/>
+                            <constraint firstItem="p4n-Nw-ut7" firstAttribute="bottom" secondItem="LMY-2N-mKN" secondAttribute="bottom" type="default" id="w73-A1-TuJ"/>
+                            <constraint firstItem="Vyk-tX-KNv" firstAttribute="leading" secondItem="LMY-2N-mKN" secondAttribute="leading" type="default" id="whj-8F-6WS"/>
+                            <constraint firstItem="Vyk-tX-KNv" firstAttribute="bottom" secondItem="LMY-2N-mKN" secondAttribute="bottom" type="default" id="yah-29-ZGa"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Color Harmonizor" id="XH2-c6-86K">
+                        <barButtonItem key="leftBarButtonItem" systemItem="trash" id="H2Y-TT-nLe">
+                            <color key="tintColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="goBack:" destination="UR5-Hl-POs" id="wFu-gr-2DU"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="3BR-oA-yKa">
+                            <color key="tintColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                            <connections>
+                                <action selector="loadActionSheet:" destination="UR5-Hl-POs" id="d0V-nE-AK9"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="filtersScrollView" destination="Vyk-tX-KNv" id="NHn-9e-w6u"/>
+                        <outlet property="harmonizedImage" destination="p4n-Nw-ut7" id="8ZD-6B-oLc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jJk-2V-bOC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="235" y="-13"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="7LT-Aw-2pL">
+            <objects>
+                <navigationController definesPresentationContext="YES" id="7zm-O2-8kM" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="8ga-k1-kzg">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="2" kind="relationship" relationship="rootViewController" id="R5t-bU-ML0"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="D2m-1V-ngI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-646" y="-25"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="harmonize.png" width="502" height="134"/>
+        <image name="logo.png" width="180" height="180"/>
+        <image name="white-arrow.png" width="260" height="120"/>
+    </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <nil key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination"/>
+    </simulatedMetricsContainer>
+</document>
