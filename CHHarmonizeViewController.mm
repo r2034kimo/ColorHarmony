@@ -224,7 +224,7 @@ using namespace cv;
         int Lalpha = 0;
         int Lt = [self VType:hisSize alphaAngle:&Lalpha];
         NSLog(@"LType: %d , %d" , Lt, Lalpha);
-        [self VTypeHarm:hsv alpha:Lalpha];
+        [self LTypeHarm:hsv alpha:Lalpha];
         cvtColor(hsv, hsv, CV_HSV2BGR);
     }
     if([Name isEqualToString:@"ITypeFilter"])
@@ -724,7 +724,7 @@ using namespace cv;
             
             if((ialpha+4)%180 < hue && hue <=(ialpha+94)%180)
                 image.at<cv::Vec3b>(i,j)[0] = (ialpha + 4 + (image.at<cv::Vec3b>(i,j)[0] - (ialpha+4)+180)%180/90*4)%180;
-            else if((ialpha+94)%180 < hue && hue <=(ialpha+184)%180)
+            else //if((ialpha+94)%180 < hue && hue <=(ialpha+184)%180)
                 image.at<cv::Vec3b>(i,j)[0] = (ialpha + 4 - ((ialpha+184)-image.at<cv::Vec3b>(i,j)[0]+180)%180/90*4+180)%180;
         }
     }
@@ -742,7 +742,7 @@ using namespace cv;
             
             if((Valpha+24)%180 < hue && hue <=(Valpha+114)%180)
                 image.at<cv::Vec3b>(i,j)[0] = (Valpha + 24 + (image.at<cv::Vec3b>(i,j)[0] - (Valpha+24)+180)%180/90*24)%180;
-            else if((Valpha+114)%180 < hue && hue <=(Valpha+204)%180)
+            else //if((Valpha+114)%180 < hue && hue <=(Valpha+204)%180)
                 image.at<cv::Vec3b>(i,j)[0] = (Valpha + 24 - ((Valpha+204)-image.at<cv::Vec3b>(i,j)[0]+180)%180/90*24+180)%180;
         }
     }
